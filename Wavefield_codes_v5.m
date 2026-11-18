@@ -107,7 +107,7 @@ fprintf('Noise injection... \n')
 signal_power = norm(u_big)^2/length(u_big);
 snr_db  = 20;
 noise_power = signal_power/(10^(snr_db/10));
-noise = sqrt(noise_power/2)*(rand(size(u_big)) + 1j*rand(size(u_big)));
+noise = sqrt(noise_power/2)*(randn(size(u_big)) + 1j*randn(size(u_big)));
 u_big_noise = u_big + noise;
 
 % --- 6. SOLVE INVERSE PROBLEM ---
